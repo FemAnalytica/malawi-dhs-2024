@@ -6,23 +6,23 @@
 <title>Malawi DHS 2024 — FemAnalytica</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 /* ── BRAND TOKENS (from FemAnalytica logo) ── */
 :root {
-  --cyan:     #45CDD8;   /* logo left-peak cyan */
-  --purple:   #7B6FD4;   /* logo right-peak purple */
-  --teal:     #2B9EBA;   /* logo subtitle teal */
-  --navy:     #1B3A6B;   /* logo wordmark navy */
+  --cyan:     #45CDD8;
+  --purple:   #7B6FD4;
+  --teal:     #2B9EBA;
+  --navy:     #1B3A6B;
 
-  --bg:       #070F1B;
-  --surface:  #0C1826;
-  --surface2: #101E2E;
-  --border:   #182B3E;
+  --bg:       #060E19;
+  --surface:  #0A1622;
+  --surface2: #0E1C2C;
+  --border:   rgba(255,255,255,0.07);
 
-  --text:     #F2F8FD;
-  --text2:    #C4DAEA;
+  --text:     #F5FAFE;
+  --text2:    #C6DCE9;
   --text3:    #8AAFC8;
 
   --green:    #2FC98B;
@@ -33,12 +33,13 @@
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 13.5px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar { width:5px; height:5px; }
@@ -49,28 +50,27 @@ body {
 header {
   position:sticky; top:0; z-index:200;
   background: linear-gradient(to right, #45CDD8 0%, #7B6FD4 28%, #4A3A9B 55%, #1B3A6B 78%, #060E1A 100%);
-  border-bottom: none;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 24px rgba(0,0,0,0.55);
 }
 .header-inner {
   max-width:1380px; margin:0 auto;
   display:flex; align-items:center; justify-content:space-between;
-  padding:0 28px; height:62px; gap:16px;
+  padding:0 32px; height:66px; gap:24px;
 }
-.brand { display:flex; flex-direction:column; justify-content:center; align-items:flex-end; gap:5px; }
+.brand { display:flex; flex-direction:column; justify-content:center; align-items:flex-end; gap:4px; }
 .brand img {
-  height:32px; width:auto; display:block; flex-shrink:0;
+  height:30px; width:auto; display:block; flex-shrink:0;
 }
 .brand-tagline {
-  font-size:9.5px; font-weight:500; color:rgba(255,255,255,0.70);
-  letter-spacing:.1em; text-transform:uppercase;
+  font-size:8.5px; font-weight:500; color:rgba(255,255,255,0.55);
+  letter-spacing:.14em; text-transform:uppercase;
 }
 .header-meta {
-  font-size:11px; color:rgba(10,30,65,0.88); text-align:left; line-height:1.5;
-  background:rgba(255,255,255,0.28); border-radius:20px; padding:6px 16px;
-  backdrop-filter:blur(6px); margin-right:auto;
+  font-size:11px; color:rgba(5,18,45,0.85); text-align:left; line-height:1.45;
 }
-.header-meta strong { color:#0a1e41; font-weight:700; display:block; font-size:12px; }
+.header-meta strong {
+  color:#05122d; font-weight:700; display:block; font-size:13px; letter-spacing:-0.2px;
+}
 
 /* ── NAV ── */
 nav {
@@ -81,61 +81,63 @@ nav {
 nav::-webkit-scrollbar { display:none; }
 .nav-inner {
   max-width:1380px; margin:0 auto;
-  display:flex; padding:0 28px;
+  display:flex; padding:0 32px;
 }
 .tab {
-  padding:0 16px; height:40px;
+  padding:0 18px; height:42px;
   background:none; border:none; cursor:pointer;
   font-family:inherit; font-size:12px; font-weight:500;
   color:var(--text3); border-bottom:2px solid transparent;
-  white-space:nowrap; letter-spacing:0.1px;
+  white-space:nowrap; letter-spacing:0.2px;
   transition:color .15s, border-color .15s;
 }
 .tab:hover { color:var(--text2); }
 .tab.active { color:var(--cyan); border-bottom-color:var(--cyan); }
 
 /* ── MAIN ── */
-main { max-width:1380px; margin:0 auto; padding:24px 28px 56px; }
+main { max-width:1380px; margin:0 auto; padding:28px 32px 64px; }
 .section { display:none; }
 .section.active { display:block; }
 
 /* ── PAGE HEADING ── */
-.page-head { margin-bottom:20px; }
+.page-head { margin-bottom:24px; }
 .page-head h2 {
-  font-size:17px; font-weight:700; letter-spacing:-0.3px; margin-bottom:4px;
+  font-size:20px; font-weight:600; letter-spacing:-0.6px; margin-bottom:6px;
 }
 .page-head h2 .accent { color:var(--cyan); }
-.page-head p { font-size:12px; color:var(--text2); max-width:620px; line-height:1.6; }
-.rule { height:1px; background:var(--border); margin-bottom:20px; }
+.page-head p { font-size:12.5px; color:var(--text2); max-width:640px; line-height:1.65; }
+.rule { height:1px; background:var(--border); margin-bottom:24px; }
 
 /* ── KPI STRIP ── */
 .kpi-row {
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-  gap:10px; margin-bottom:20px;
+  grid-template-columns:repeat(auto-fill,minmax(168px,1fr));
+  gap:12px; margin-bottom:24px;
 }
 .kpi {
   background:var(--surface); border:1px solid var(--border);
-  border-radius:10px; padding:14px 15px;
-  border-top:2px solid var(--cyan);
-  transition:border-color .2s;
+  border-radius:12px; padding:18px 18px 14px;
+  border-top:3px solid var(--cyan);
+  transition:border-color .2s, box-shadow .2s;
 }
+.kpi:hover { box-shadow:0 4px 20px rgba(0,0,0,0.3); }
 .kpi.purple { border-top-color:var(--purple); }
 .kpi.green  { border-top-color:var(--green); }
 .kpi.amber  { border-top-color:var(--amber); }
 .kpi.red    { border-top-color:var(--red); }
 
 .kpi-val {
-  font-size:22px; font-weight:700; letter-spacing:-0.5px;
-  color:var(--text); line-height:1; margin-bottom:5px;
+  font-size:26px; font-weight:700; letter-spacing:-1px;
+  color:var(--text); line-height:1; margin-bottom:7px;
 }
-.kpi-lbl { font-size:11px; color:var(--text2); line-height:1.35; }
-.kpi-delta {
-  font-size:9.5px; font-weight:600; color:var(--text3); margin-top:4px;
-}
+.kpi-lbl { font-size:11px; color:var(--text2); line-height:1.4; }
+.kpi-val .tr-up   { font-size:14px; font-weight:700; color:var(--green); margin-left:4px; vertical-align:middle; }
+.kpi-val .tr-dn   { font-size:14px; font-weight:700; color:var(--green); margin-left:4px; vertical-align:middle; }
+.kpi-val .tr-warn { font-size:14px; font-weight:700; color:var(--amber); margin-left:4px; vertical-align:middle; }
+.kpi-val .tr-bad  { font-size:14px; font-weight:700; color:var(--red);   margin-left:4px; vertical-align:middle; }
 
 /* ── CARDS ── */
-.grid { display:grid; gap:12px; margin-bottom:12px; }
+.grid { display:grid; gap:14px; margin-bottom:14px; }
 .grid.g2 { grid-template-columns:repeat(2,1fr); }
 .grid.g3 { grid-template-columns:repeat(3,1fr); }
 @media(max-width:860px) {
@@ -144,34 +146,34 @@ main { max-width:1380px; margin:0 auto; padding:24px 28px 56px; }
 
 .card {
   background:var(--surface); border:1px solid var(--border);
-  border-radius:10px; padding:18px;
+  border-radius:14px; padding:22px 22px 18px;
 }
 .card.s2 { grid-column:span 2; }
 @media(max-width:860px) { .card.s2 { grid-column:span 1; } }
 
 .card-title {
-  font-size:12.5px; font-weight:600; color:var(--text);
-  letter-spacing:-0.1px; margin-bottom:2px;
-  display:flex; align-items:center; gap:7px;
+  font-size:13px; font-weight:600; color:var(--text);
+  letter-spacing:-0.2px; margin-bottom:3px;
+  display:flex; align-items:center; gap:8px;
 }
 .tag {
-  font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.8px;
-  padding:2px 6px; border-radius:3px;
+  font-size:8.5px; font-weight:600; text-transform:uppercase; letter-spacing:1px;
+  padding:2px 7px; border-radius:4px;
   background:rgba(69,205,216,0.1); color:var(--cyan);
 }
 .tag.pu { background:rgba(123,111,212,0.12); color:var(--purple); }
-.tag.gr { background:rgba(47,201,139,0.12); color:var(--green); }
-.tag.rd { background:rgba(224,74,74,0.12);  color:var(--red); }
-.tag.am { background:rgba(240,165,42,0.12); color:var(--amber); }
+.tag.gr { background:rgba(47,201,139,0.12);  color:var(--green); }
+.tag.rd { background:rgba(224,74,74,0.12);   color:var(--red); }
+.tag.am { background:rgba(240,165,42,0.12);  color:var(--amber); }
 
-.card-sub { font-size:11px; color:var(--text3); margin-bottom:14px; line-height:1.4; }
+.card-sub { font-size:11.5px; color:var(--text3); margin-bottom:16px; line-height:1.5; }
 
-/* ── NOTE (replaces heavy insight box) ── */
+/* ── NOTE ── */
 .note {
-  margin-top:12px; padding:9px 11px;
-  background:var(--surface2); border-radius:6px;
+  margin-top:14px; padding:10px 14px;
+  background:var(--surface2); border-radius:8px;
   border-left:2px solid var(--cyan);
-  font-size:11px; color:var(--text2); line-height:1.55;
+  font-size:11.5px; color:var(--text2); line-height:1.6;
 }
 .note.pu { border-left-color:var(--purple); }
 .note.am { border-left-color:var(--amber); }
@@ -179,39 +181,39 @@ main { max-width:1380px; margin:0 auto; padding:24px 28px 56px; }
 .note strong { color:var(--text); font-weight:600; }
 
 /* ── PROGRESS LIST ── */
-.prog-list { display:flex; flex-direction:column; gap:8px; }
-.prog-row { display:flex; align-items:center; gap:10px; }
-.prog-lbl { font-size:11px; color:var(--text2); min-width:0; flex:1; }
-.prog-val { font-size:11px; font-weight:600; color:var(--text); width:34px; text-align:right; flex-shrink:0; }
-.prog-track { height:4px; border-radius:3px; background:var(--surface2); flex:0 0 110px; }
+.prog-list { display:flex; flex-direction:column; gap:9px; }
+.prog-row { display:flex; align-items:center; gap:12px; }
+.prog-lbl { font-size:11.5px; color:var(--text2); min-width:0; flex:1; }
+.prog-val { font-size:11.5px; font-weight:600; color:var(--text); width:36px; text-align:right; flex-shrink:0; }
+.prog-track { height:3px; border-radius:3px; background:var(--surface2); flex:0 0 110px; }
 .prog-fill  { height:100%; border-radius:3px; }
 
 /* ── TILE GRID ── */
 .tiles {
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
-  gap:10px; margin-top:2px;
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:12px; margin-top:4px;
 }
 .tile {
-  background:var(--surface2); border:1px solid var(--border); border-radius:8px;
-  padding:14px; border-left:2px solid var(--cyan);
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:10px; padding:16px; border-left:2px solid var(--cyan);
 }
 .tile.pu { border-left-color:var(--purple); }
 .tile.am { border-left-color:var(--amber); }
 .tile.rd { border-left-color:var(--red); }
-.tile-lbl { font-size:9.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.6px; color:var(--text3); margin-bottom:5px; }
-.tile-body { font-size:11.5px; color:var(--text2); line-height:1.5; }
+.tile-lbl { font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:0.9px; color:var(--text3); margin-bottom:6px; }
+.tile-body { font-size:12px; color:var(--text2); line-height:1.55; }
 .tile-body strong { color:var(--text); }
 
 /* ── FOOTER ── */
 footer {
-  border-top:1px solid var(--border); padding:18px 28px;
+  border-top:1px solid var(--border); padding:20px 32px;
   max-width:1380px; margin:0 auto;
   display:flex; justify-content:space-between; align-items:center;
   flex-wrap:wrap; gap:8px;
 }
-footer .fl { font-size:11px; color:var(--text3); }
+footer .fl { font-size:11.5px; color:var(--text3); }
 footer .fl strong { color:var(--cyan); font-weight:600; }
-footer .fr { font-size:10.5px; color:var(--text3); text-align:right; }
+footer .fr { font-size:11px; color:var(--text3); text-align:right; }
 </style>
 </head>
 <body>
@@ -253,12 +255,12 @@ footer .fr { font-size:10.5px; color:var(--text3); text-align:right; }
   <div class="rule"></div>
 
   <div class="kpi-row">
-    <div class="kpi"><div class="kpi-val">48</div><div class="kpi-lbl">Under-5 Mortality Rate per 1,000 live births</div><div class="kpi-delta">Down from 234 in 1992</div></div>
-    <div class="kpi red"><div class="kpi-val">224</div><div class="kpi-lbl">Maternal Mortality Ratio per 100,000 live births</div><div class="kpi-delta">Down from 1,123 in 1993–2000</div></div>
-    <div class="kpi green"><div class="kpi-val">97%</div><div class="kpi-lbl">Births in a health facility</div><div class="kpi-delta">Near-universal coverage</div></div>
-    <div class="kpi purple"><div class="kpi-val">66%</div><div class="kpi-lbl">Married women using modern contraception</div><div class="kpi-delta">Up from 26% in 2000</div></div>
-    <div class="kpi amber"><div class="kpi-val">38%</div><div class="kpi-lbl">Children under 5 who are stunted</div><div class="kpi-delta">Critical and persistent</div></div>
-    <div class="kpi red"><div class="kpi-val">28.5%</div><div class="kpi-lbl">Women experiencing IPV in past 12 months</div><div class="kpi-delta">Remains high</div></div>
+    <div class="kpi"><div class="kpi-val">48<span class="tr-dn">▼</span></div><div class="kpi-lbl">Under-5 Mortality Rate per 1,000 live births</div></div>
+    <div class="kpi red"><div class="kpi-val">224<span class="tr-dn">▼</span></div><div class="kpi-lbl">Maternal Mortality Ratio per 100,000 live births</div></div>
+    <div class="kpi green"><div class="kpi-val">97%<span class="tr-up">▲</span></div><div class="kpi-lbl">Births in a health facility</div></div>
+    <div class="kpi purple"><div class="kpi-val">66%<span class="tr-up">▲</span></div><div class="kpi-lbl">Married women using modern contraception</div></div>
+    <div class="kpi amber"><div class="kpi-val">38%<span class="tr-warn">→</span></div><div class="kpi-lbl">Children under 5 who are stunted</div></div>
+    <div class="kpi red"><div class="kpi-val">28.5%<span class="tr-warn">→</span></div><div class="kpi-lbl">Women experiencing IPV in past 12 months</div></div>
   </div>
 
   <div class="grid g2">
@@ -300,11 +302,11 @@ footer .fr { font-size:10.5px; color:var(--text3); text-align:right; }
   <div class="rule"></div>
 
   <div class="kpi-row">
-    <div class="kpi"><div class="kpi-val">24</div><div class="kpi-lbl">Neonatal mortality per 1,000 live births</div><div class="kpi-delta">Down from 42 in 1992</div></div>
-    <div class="kpi"><div class="kpi-val">35</div><div class="kpi-lbl">Infant mortality per 1,000 live births</div><div class="kpi-delta">Down from 135 in 1992</div></div>
-    <div class="kpi"><div class="kpi-val">48</div><div class="kpi-lbl">Under-5 mortality per 1,000 live births</div><div class="kpi-delta">Down from 234 in 1992</div></div>
-    <div class="kpi amber"><div class="kpi-val">37</div><div class="kpi-lbl">Perinatal mortality per 1,000 pregnancies ≥28 wks</div></div>
-    <div class="kpi red"><div class="kpi-val">50%</div><div class="kpi-lbl">Under-5 deaths that are neonatal</div></div>
+    <div class="kpi"><div class="kpi-val">24<span class="tr-dn">▼</span></div><div class="kpi-lbl">Neonatal mortality per 1,000 live births</div></div>
+    <div class="kpi"><div class="kpi-val">35<span class="tr-dn">▼</span></div><div class="kpi-lbl">Infant mortality per 1,000 live births</div></div>
+    <div class="kpi"><div class="kpi-val">48<span class="tr-dn">▼</span></div><div class="kpi-lbl">Under-5 mortality per 1,000 live births</div></div>
+    <div class="kpi amber"><div class="kpi-val">37<span class="tr-warn">→</span></div><div class="kpi-lbl">Perinatal mortality per 1,000 pregnancies ≥28 wks</div></div>
+    <div class="kpi red"><div class="kpi-val">50%<span class="tr-warn">→</span></div><div class="kpi-lbl">Under-5 deaths that are neonatal</div></div>
   </div>
 
   <div class="grid g2">
@@ -348,12 +350,12 @@ footer .fr { font-size:10.5px; color:var(--text3); text-align:right; }
   <div class="rule"></div>
 
   <div class="kpi-row">
-    <div class="kpi green"><div class="kpi-val">96%</div><div class="kpi-lbl">ANC from a skilled provider</div></div>
-    <div class="kpi amber"><div class="kpi-val">62%</div><div class="kpi-lbl">Women with 4+ ANC visits</div></div>
-    <div class="kpi green"><div class="kpi-val">97%</div><div class="kpi-lbl">Births in a health facility</div></div>
-    <div class="kpi"><div class="kpi-val">12%</div><div class="kpi-lbl">Births by caesarean section</div></div>
-    <div class="kpi amber"><div class="kpi-val">58%</div><div class="kpi-lbl">Postnatal check within 2 days</div></div>
-    <div class="kpi red"><div class="kpi-val">13%</div><div class="kpi-lbl">Married women with unmet FP need</div></div>
+    <div class="kpi green"><div class="kpi-val">96%<span class="tr-up">▲</span></div><div class="kpi-lbl">ANC from a skilled provider</div></div>
+    <div class="kpi amber"><div class="kpi-val">62%<span class="tr-warn">→</span></div><div class="kpi-lbl">Women with 4+ ANC visits</div></div>
+    <div class="kpi green"><div class="kpi-val">97%<span class="tr-up">▲</span></div><div class="kpi-lbl">Births in a health facility</div></div>
+    <div class="kpi"><div class="kpi-val">12%<span class="tr-up">▲</span></div><div class="kpi-lbl">Births by caesarean section</div></div>
+    <div class="kpi amber"><div class="kpi-val">58%<span class="tr-warn">→</span></div><div class="kpi-lbl">Postnatal check within 2 days</div></div>
+    <div class="kpi red"><div class="kpi-val">13%<span class="tr-warn">→</span></div><div class="kpi-lbl">Married women with unmet FP need</div></div>
   </div>
 
   <div class="grid g2">
@@ -396,11 +398,11 @@ footer .fr { font-size:10.5px; color:var(--text3); text-align:right; }
   <div class="rule"></div>
 
   <div class="kpi-row">
-    <div class="kpi red"><div class="kpi-val">38%</div><div class="kpi-lbl">Children under 5 stunted</div></div>
-    <div class="kpi amber"><div class="kpi-val">10%</div><div class="kpi-lbl">Children under 5 underweight</div></div>
-    <div class="kpi"><div class="kpi-val">67%</div><div class="kpi-lbl">Children 12–23 months fully vaccinated (basic)</div></div>
-    <div class="kpi green"><div class="kpi-val">60%</div><div class="kpi-lbl">Children under 6 months exclusively breastfed</div></div>
-    <div class="kpi red"><div class="kpi-val">23%</div><div class="kpi-lbl">Children 6–59 months positive for malaria</div></div>
+    <div class="kpi red"><div class="kpi-val">38%<span class="tr-warn">→</span></div><div class="kpi-lbl">Children under 5 stunted</div></div>
+    <div class="kpi amber"><div class="kpi-val">10%<span class="tr-warn">→</span></div><div class="kpi-lbl">Children under 5 underweight</div></div>
+    <div class="kpi"><div class="kpi-val">67%<span class="tr-up">▲</span></div><div class="kpi-lbl">Children 12–23 months fully vaccinated (basic)</div></div>
+    <div class="kpi green"><div class="kpi-val">60%<span class="tr-up">▲</span></div><div class="kpi-lbl">Children under 6 months exclusively breastfed</div></div>
+    <div class="kpi red"><div class="kpi-val">23%<span class="tr-warn">→</span></div><div class="kpi-lbl">Children 6–59 months positive for malaria</div></div>
   </div>
 
   <div class="grid g2">
@@ -443,10 +445,10 @@ footer .fr { font-size:10.5px; color:var(--text3); text-align:right; }
   <div class="rule"></div>
 
   <div class="kpi-row">
-    <div class="kpi"><div class="kpi-val">58%</div><div class="kpi-lbl">Girls 15–17 with at least 1 HPV dose</div></div>
-    <div class="kpi green"><div class="kpi-val">89%</div><div class="kpi-lbl">Vaccinated at school (of those vaccinated)</div></div>
-    <div class="kpi"><div class="kpi-val">7%</div><div class="kpi-lbl">Vaccinated at a health facility</div></div>
-    <div class="kpi red"><div class="kpi-val">42%</div><div class="kpi-lbl">Eligible girls not yet vaccinated</div></div>
+    <div class="kpi"><div class="kpi-val">58%<span class="tr-up">▲</span></div><div class="kpi-lbl">Girls 15–17 with at least 1 HPV dose</div></div>
+    <div class="kpi green"><div class="kpi-val">89%<span class="tr-up">▲</span></div><div class="kpi-lbl">Vaccinated at school (of those vaccinated)</div></div>
+    <div class="kpi"><div class="kpi-val">7%<span class="tr-warn">→</span></div><div class="kpi-lbl">Vaccinated at a health facility</div></div>
+    <div class="kpi red"><div class="kpi-val">42%<span class="tr-warn">→</span></div><div class="kpi-lbl">Eligible girls not yet vaccinated</div></div>
   </div>
 
   <div class="grid g2">
@@ -486,11 +488,11 @@ footer .fr { font-size:10.5px; color:var(--text3); text-align:right; }
   <div class="rule"></div>
 
   <div class="kpi-row">
-    <div class="kpi"><div class="kpi-val">65%</div><div class="kpi-lbl">Married women employed (vs 93% men)</div></div>
-    <div class="kpi amber"><div class="kpi-val">26%</div><div class="kpi-lbl">Women deciding alone how earnings are used</div></div>
-    <div class="kpi"><div class="kpi-val">52%</div><div class="kpi-lbl">Women who own land</div></div>
-    <div class="kpi green"><div class="kpi-val">73%</div><div class="kpi-lbl">Women making own health decisions (alone/jointly)</div></div>
-    <div class="kpi red"><div class="kpi-val">18%</div><div class="kpi-lbl">Women who believe wife beating is justified</div></div>
+    <div class="kpi"><div class="kpi-val">65%<span class="tr-bad">▼</span></div><div class="kpi-lbl">Married women employed (vs 93% men)</div></div>
+    <div class="kpi amber"><div class="kpi-val">26%<span class="tr-warn">→</span></div><div class="kpi-lbl">Women deciding alone how earnings are used</div></div>
+    <div class="kpi"><div class="kpi-val">52%<span class="tr-up">▲</span></div><div class="kpi-lbl">Women who own land</div></div>
+    <div class="kpi green"><div class="kpi-val">73%<span class="tr-up">▲</span></div><div class="kpi-lbl">Women making own health decisions (alone/jointly)</div></div>
+    <div class="kpi red"><div class="kpi-val">18%<span class="tr-warn">→</span></div><div class="kpi-lbl">Women who believe wife beating is justified</div></div>
   </div>
 
   <div class="grid g2">
@@ -533,11 +535,11 @@ footer .fr { font-size:10.5px; color:var(--text3); text-align:right; }
   <div class="rule"></div>
 
   <div class="kpi-row">
-    <div class="kpi red"><div class="kpi-val">28.5%</div><div class="kpi-lbl">Women subjected to any IPV — past 12 months</div></div>
-    <div class="kpi red"><div class="kpi-val">18.1%</div><div class="kpi-lbl">Psychological violence by intimate partner</div></div>
-    <div class="kpi red"><div class="kpi-val">15.2%</div><div class="kpi-lbl">Physical violence by intimate partner</div></div>
-    <div class="kpi amber"><div class="kpi-val">12.2%</div><div class="kpi-lbl">Sexual violence by intimate partner</div></div>
-    <div class="kpi amber"><div class="kpi-val">6.0%</div><div class="kpi-lbl">Women 18–29 experiencing sexual violence before age 18</div></div>
+    <div class="kpi red"><div class="kpi-val">28.5%<span class="tr-warn">→</span></div><div class="kpi-lbl">Women subjected to any IPV — past 12 months</div></div>
+    <div class="kpi red"><div class="kpi-val">18.1%<span class="tr-warn">→</span></div><div class="kpi-lbl">Psychological violence by intimate partner</div></div>
+    <div class="kpi red"><div class="kpi-val">15.2%<span class="tr-warn">→</span></div><div class="kpi-lbl">Physical violence by intimate partner</div></div>
+    <div class="kpi amber"><div class="kpi-val">12.2%<span class="tr-warn">→</span></div><div class="kpi-lbl">Sexual violence by intimate partner</div></div>
+    <div class="kpi amber"><div class="kpi-val">6.0%<span class="tr-warn">→</span></div><div class="kpi-lbl">Women 18–29 experiencing sexual violence before age 18</div></div>
   </div>
 
   <div class="grid g2">
@@ -580,11 +582,11 @@ footer .fr { font-size:10.5px; color:var(--text3); text-align:right; }
   <div class="rule"></div>
 
   <div class="kpi-row">
-    <div class="kpi red"><div class="kpi-val">245</div><div class="kpi-lbl">Pregnancy-Related Mortality Ratio per 100,000 live births</div><div class="kpi-delta">Down from 1,123 in 1993–2000</div></div>
-    <div class="kpi red"><div class="kpi-val">224</div><div class="kpi-lbl">Maternal Mortality Ratio per 100,000 live births</div></div>
-    <div class="kpi green"><div class="kpi-val">1.0%</div><div class="kpi-lbl">Lifetime risk of pregnancy-related death</div><div class="kpi-delta">Down from 7.0% in 1993–2000</div></div>
-    <div class="kpi"><div class="kpi-val">18</div><div class="kpi-lbl">Stillbirths per 1,000 pregnancies ≥28 weeks</div></div>
-    <div class="kpi"><div class="kpi-val">19</div><div class="kpi-lbl">Early neonatal deaths per 1,000 live births</div></div>
+    <div class="kpi red"><div class="kpi-val">245<span class="tr-dn">▼</span></div><div class="kpi-lbl">Pregnancy-Related Mortality Ratio per 100,000 live births</div></div>
+    <div class="kpi red"><div class="kpi-val">224<span class="tr-dn">▼</span></div><div class="kpi-lbl">Maternal Mortality Ratio per 100,000 live births</div></div>
+    <div class="kpi green"><div class="kpi-val">1.0%<span class="tr-dn">▼</span></div><div class="kpi-lbl">Lifetime risk of pregnancy-related death</div></div>
+    <div class="kpi"><div class="kpi-val">18<span class="tr-warn">→</span></div><div class="kpi-lbl">Stillbirths per 1,000 pregnancies ≥28 weeks</div></div>
+    <div class="kpi"><div class="kpi-val">19<span class="tr-warn">→</span></div><div class="kpi-lbl">Early neonatal deaths per 1,000 live births</div></div>
   </div>
 
   <div class="grid g2">
@@ -642,14 +644,14 @@ const GD = 'rgba(24,43,62,0.8)';
 const B = {
   responsive:true, maintainAspectRatio:true,
   plugins:{
-    legend:{ labels:{ color:LT, font:{family:'Plus Jakarta Sans',size:10}, padding:10, boxWidth:10 } },
+    legend:{ labels:{ color:LT, font:{family:'Space Grotesk',size:10}, padding:10, boxWidth:10 } },
     tooltip:{ backgroundColor:'#0C1826', borderColor:'#182B3E', borderWidth:1,
       titleColor:LT, bodyColor:MT, padding:9,
-      titleFont:{family:'Plus Jakarta Sans',size:11,weight:'600'}, bodyFont:{family:'Plus Jakarta Sans',size:10} }
+      titleFont:{family:'Space Grotesk',size:11,weight:'600'}, bodyFont:{family:'Space Grotesk',size:10} }
   },
   scales:{
-    x:{ ticks:{color:MT,font:{family:'Plus Jakarta Sans',size:10}}, grid:{color:GD}, border:{color:'transparent'} },
-    y:{ ticks:{color:MT,font:{family:'Plus Jakarta Sans',size:10}}, grid:{color:GD}, border:{color:'transparent'} }
+    x:{ ticks:{color:MT,font:{family:'Space Grotesk',size:10}}, grid:{color:GD}, border:{color:'transparent'} },
+    y:{ ticks:{color:MT,font:{family:'Space Grotesk',size:10}}, grid:{color:GD}, border:{color:'transparent'} }
   }
 };
 const NS = { ...B, scales:{} };
@@ -657,13 +659,13 @@ const NS = { ...B, scales:{} };
 /* Horizontal bar helper — explicit type declarations required by Chart.js 4 */
 const H = (xMax, xTitle, legend=false) => ({
   responsive:true, maintainAspectRatio:true, indexAxis:'y',
-  plugins:{ legend:{ display:legend, labels:{ color:LT, font:{family:'Plus Jakarta Sans',size:10}, padding:10, boxWidth:10 } },
+  plugins:{ legend:{ display:legend, labels:{ color:LT, font:{family:'Space Grotesk',size:10}, padding:10, boxWidth:10 } },
     tooltip:{ backgroundColor:'#0C1826', borderColor:'#182B3E', borderWidth:1, titleColor:LT, bodyColor:MT, padding:9,
-      titleFont:{family:'Plus Jakarta Sans',size:11,weight:'600'}, bodyFont:{family:'Plus Jakarta Sans',size:10} } },
+      titleFont:{family:'Space Grotesk',size:11,weight:'600'}, bodyFont:{family:'Space Grotesk',size:10} } },
   scales:{
-    x:{ type:'linear', min:0, max:xMax, ticks:{color:MT,font:{family:'Plus Jakarta Sans',size:10}}, grid:{color:GD}, border:{color:'transparent'},
+    x:{ type:'linear', min:0, max:xMax, ticks:{color:MT,font:{family:'Space Grotesk',size:10}}, grid:{color:GD}, border:{color:'transparent'},
         ...(xTitle ? {title:{display:true,text:xTitle,color:MT}} : {}) },
-    y:{ type:'category', ticks:{color:MT,font:{family:'Plus Jakarta Sans',size:10}}, grid:{color:GD}, border:{color:'transparent'} }
+    y:{ type:'category', ticks:{color:MT,font:{family:'Space Grotesk',size:10}}, grid:{color:GD}, border:{color:'transparent'} }
   }
 });
 
@@ -848,7 +850,7 @@ mk('emp-dec','radar',{
     {label:'Women',data:[73,62,68,72,42,65],borderColor:CY,backgroundColor:'rgba(69,205,216,0.1)',pointBackgroundColor:CY,pointRadius:3},
     {label:'Men (selected)',data:[86,null,null,null,null,93],borderColor:PU,backgroundColor:'rgba(123,111,212,0.07)',pointBackgroundColor:PU,pointRadius:3},
   ]
-},{...B,scales:{r:{ticks:{color:MT,backdropColor:'transparent',font:{family:'Plus Jakarta Sans',size:9}},grid:{color:GD},angleLines:{color:GD},pointLabels:{color:LT,font:{family:'Plus Jakarta Sans',size:9.5}},min:0,max:100}}});
+},{...B,scales:{r:{ticks:{color:MT,backdropColor:'transparent',font:{family:'Space Grotesk',size:9}},grid:{color:GD},angleLines:{color:GD},pointLabels:{color:LT,font:{family:'Space Grotesk',size:9.5}},min:0,max:100}}});
 
 mk('emp-tr','line',{
   labels:['2000','2004','2010','2015–16','2024'],
